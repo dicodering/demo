@@ -1,0 +1,809 @@
+@charset "utf-8";
+/* 나눔 고딕 웹폰트 */
+@import url(https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean);
+
+/* 공통 영역 */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Nanum Gothic', sans serif;
+}
+
+html, body {
+    width: 100%;
+    min-width: 1200px;
+    margin: 0 auto;
+    border-top: 2px solid rgb(238, 131, 153);
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* float & clearboth */
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    float: none;
+    clear: both;
+}
+/* 버튼 */
+.swipe { 
+    position: relative; 
+    transform: translate(100);
+}
+.swipe a {
+    display: block;
+    position: relative;
+}
+.swipe button { 
+    position: absolute; 
+    margin: 20px;
+    z-index: 10; 
+    top: 50%; 
+    transform: 
+    translateY(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color:transparent;
+    border: 5px solid rgba(255, 255, 255, 0.363);
+    cursor: pointer;
+
+}
+.swipe button::before {
+    font-family: 'xeicon';
+    color: rgba(255, 255, 255, 0.486);
+    font-size: 70px;
+} 
+.swipe button.slick-prev {
+    left:0;
+    font-size: 0;
+    color: transparent;
+}
+.swipe button.slick-prev::before {
+    content: "\e93d";
+    font-family: 'xeicon';
+}
+.swipe button.slick-next {
+    right:0;
+    font-size: 0;
+    color: transparent;
+}
+.swipe button.slick-next::before {
+    content: "\e940";
+    font-family: 'xeicon'
+}
+
+
+/* flex 정렬 */
+.flex {
+    display: flex;
+    
+}
+
+/* 상단바 */
+.top {
+    background-image: url(./img/banner-bg.gif);
+}
+.top-bar {
+    position: relative;
+    /* width: 1200px; */
+    height: 130px;
+    margin: 0 auto;
+}
+
+/* 상단바 > 왼쪽 */
+.top-bar .top-icons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.top-bar .top-icons .top-icon {
+    margin-right: 10px;
+}
+
+/* 상단바 > 로고 */
+.top-bar .main-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 상단바 > 오른쪽 */
+.top-bar .top-right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.top-bar .top-right li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+.top-bar .top-right li:last-child {
+    margin-right: 0;
+}
+.top-bar .top-right li a {
+    font-size: 11px;
+    color: #4a3d39;
+}
+#btnSearch {
+    width: 54px;
+    height: 54px;
+    display: block;
+}
+.search-on {
+    background-image: url(./img/topiconright.png);
+}
+.search-off {
+    background-image: url(./img/btn_search_close.gif);
+}
+
+/*--------------------------*/
+
+/* 로그인 바 */
+.top-menu {
+   width: 100%;
+   height: 46px;
+   border-bottom: 0.5px solid rgba(0, 0, 0, 0.562);
+   position: relative;
+}
+.top-menu-middle {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+/* 로그인 바 > 로그인 & 조인 */
+.top-menu .log-join {
+    float: left;
+    padding-top: 10px;
+    
+}
+.pulll .clearfix {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+.top-menu li .log {
+    color: rgb(238, 131, 153);
+    font-weight: 800;
+    font-size: 12px;
+}
+.top-menu li .join {
+    color: #777;
+    font-weight: 800;
+    padding-left: 30px;
+    font-size: 12px;
+}
+/**************************/
+.flavor-menu {
+    padding-top: 14px;
+    margin-right: -110px;
+    font-weight: 800;
+}
+.flavor-menu span {
+    padding-left: 40px;
+    padding-right: 50px;
+   
+}
+.flavor-menu a {
+    color: rgb(46, 28, 21);
+    font-size: 14px;
+}
+.menu-btn {
+    padding-bottom: 14px;
+}
+/* 영양성분 메뉴만 다르게 */
+.flavor-menu .allergy {
+    margin-right: -20px;
+    margin-left: -20px;
+}
+
+/*-- 로그인 바 > 각 메뉴 --*/
+.menu-btns {
+    position: relative;
+    margin: auto;
+    display: flex;
+}
+/* hover 메뉴박스 */
+.drop-wrap {
+    width: 100%;
+    position: absolute;
+    background-color: #f9f9f9;
+    /* width: 1213px; */
+    width: 100%;
+    margin-top: 13px;
+    /* margin-left: -223px; */
+    height: 274px;
+    z-index: 1;
+    border-top: 0.5px solid black;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+.dropdown-content {
+    height: inherit;
+    width: 1200px;
+    margin: 0 auto;
+}
+.mover {
+    display: none;
+}
+.dropdown-content ul {
+    float: left;
+    text-align: center;
+    padding-top: 40px;
+}
+.dropdown-content ul::after {
+    content: '';
+    float: none;
+    display: block;
+    clear: both;
+}
+.dropdown-content ul img {
+    margin-left: 130px;
+    margin-top: -40px;
+    margin-right: 50px;
+}
+.dropdown-content ul a {
+    color: rgb(170, 166, 166);
+    font-size: 15px;
+    font-weight: lighter;
+}
+.dropdown-content ul a:hover {
+    color: rgb(238, 131, 153);
+}
+.dropdown-content ul li {
+    margin-bottom: 15px;
+}
+/* 리스트 하나하나 마진적용 */
+.left_in01 {
+   margin-left: 94px;
+}
+.left_in02 {
+    margin-left: 66px;
+}
+.left_in03 {
+    margin-left: 84px;
+}
+.left_in04 {
+    margin-left: 68px;
+}
+.left_in05 {
+    margin-left: 65px;
+}
+.menu-btns:hover .dropdown-content {
+    display: block;    
+}
+
+/* 추가 ) 검색 버튼 누르면 hover 영역 */
+/* hover 메뉴박스 */
+.s-drop-wrap {
+    width: 100%;
+    position: absolute;
+    background-color: #f9f9f9;
+    /* width: 1213px; */
+    width: 100%;
+    height: 240px;
+    margin-top: 13px;
+    z-index: 1;
+    border-top: 0.5px solid black;
+    transition: 0.5s ease-in-out;
+}
+#searchMenu {
+    display: none;
+}
+.s-dropdown-content {
+    height: inherit;
+    width: 1200px;
+    margin: auto;
+    margin-top: 23px;
+}
+.s-dropdown-content ul {
+    padding-top: 15px;
+}
+.s-dropdown-content ul li {
+    float: left;
+}
+.s-dropdown-content ul li h4 {
+    color:rgb(46, 28, 21);
+    font-size: 14px;
+    font-weight: 300;
+    width: 100px;
+}
+/* 첫번째 영역 */
+.s-dropdown-content .s-first li {
+    display: flex;
+}
+.s-dropdown-content .s-first li:nth-child(2) {
+    margin-left: 30px;
+}
+.search_category {
+    border: 1px solid rgb(161, 161, 161);
+    padding: 4px;
+    border-radius: 5px;
+
+}
+.inline-1 {
+    width: 200px;
+    background-color:rgb(230, 230, 230);
+    border: none;
+    padding: 8px;
+    margin-left: 15px;
+}
+.inline-2 {
+    width: 450px;
+    background-color:rgb(230, 230, 230);
+    border: none;
+    padding: 8px;
+}
+.hash {
+    display: block;
+    padding-top: 8px;
+}
+.hash a {
+    color:rgb(238, 131, 153);
+    font-weight: 100;
+    margin-right: 6px;
+    font-size: 12px;
+}
+.hash span {
+    color:rgb(114, 114, 114);
+    font-weight: 100;
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+/* 두번째 영역 */
+.allergie {
+    float: left;
+}
+.allergie-box {
+    float: left;
+    font-size: 14px;
+    font-weight: 300;
+}
+.s-dropdown-content .s-second li .allergie-box label {
+    /* padding: 2px; */
+    font-size: 13px;
+    padding: 5px;
+    display: inline-block;
+}
+.s-dropdown-content .s-second li h4 {
+    display: inline-block;
+}
+
+/* 세번째 영역 */
+.s-dropdown-content .s-third {
+    width: 100%;
+    text-align: center;
+}
+.s-dropdown-content .s-third li {
+    width: 1200px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.s-dropdown-content .s-third li button {
+    width: 150px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color:rgb(238, 131, 153);
+    color: #fff;
+    font-family: 'Nanum Gothic', sans serif;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/*-- 메인 사진들 --*/
+.top-banner img {
+    width: 100%;
+}
+.swipe img {
+    width: 100%;
+}
+.swipe .swipe-banner li:nth-child(1) {
+    display: block;
+}
+/* 일단 나머지 이미지 안 보이게 */
+.swipe .swipe-banner li{
+    display: none;
+}
+
+
+/*-- 이벤트 --*/
+.name {
+    text-align: center;
+    padding: 60px 0;
+}
+.event-img img {
+    width: 288px;
+}
+.event-box .deliver-list {
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+.event-box .deliver-list:first-child {
+    margin: 0px;
+}
+/* 이벤트 > 링크 태그 */
+.event-box .deliver-list a {
+    display: block;
+}
+.event-box .deliver-list .event-img {
+    width: 100%;
+}
+
+/*-- 이벤트 > 텍스트 --*/
+.event-box .deliver-list .event-text {
+    margin-top: 15px;
+    width: 100%;
+}
+.event-box .deliver-list .event-text h6 {
+    color: rgb(46, 28, 21);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 0;
+    word-spacing: -1.6px;
+}
+.event-box .deliver-list .event-text p {
+    color: rgb(46, 28, 21);
+    color: #777;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 6px 0;
+    word-spacing: -1.6px;
+}
+/* 이벤트 점 버튼으로 슬라이드  */
+.event button.slick-prev {
+    left: 0;
+    font-size: 0;
+    color: transparent;
+}
+.event button.slick-next {
+    left: 0;
+    font-size: 0;
+    color: transparent;
+}
+.slick-dots {
+    position: absolute;
+    left: 50%;
+    top: 470px;
+    transform: translateX(-50%);
+}
+.slick-dots li {
+    float: left;
+}
+.slick-dots li button {
+    background-color: rgb(155, 154, 154);
+    padding: 1px;
+    margin: 0px  10px;
+    width: 10px;
+    height: 10px;
+    text-indent: -9999px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: none
+}
+/* 이벤트 점 눌렀을때 색 적용 */
+.slick-dots .slick-active button {
+    background-color: black;
+}
+
+/*-- BR MENU --*/
+.new-menu  {
+    background-image: url(./img/scoop.jpg);
+    background-attachment: cover;
+    background-position: top center;
+    position: relative;
+    height: 1200px;
+    margin-top: 100px;
+}
+
+.new-menu .brevent {
+    margin-bottom: 60px;
+}
+
+/* BR MENU > 메뉴 링크 */
+.new-menu .menu-link {
+    background-image: url(./img/icecream.png);
+    background-repeat: no-repeat;
+    height: 900px;
+    margin-top: 10px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.new-menu .menu-link div{
+    position: relative;
+}
+/* BR MENU > 메뉴 링크 > 아이스크림 */
+.new-menu .menu-link .icecream {
+    top: 20px;
+    left: 220px;
+    width: 400px;
+    height: 300px;
+}
+.new-menu .menu-link .icecream a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* BR MENU > 메뉴 링크 > 아이스크림 케잌 */
+.new-menu .menu-link .icecreamcake {
+    bottom: 280px;
+    left: 650px;
+    width: 270px;
+    height: 470px;
+}
+.new-menu .menu-link .icecreamcake a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* BR MENU > 메뉴 링크 > 베버리지 */
+.new-menu .menu-link .beverage {
+    bottom: 410px;
+    left: 10px;
+    width: 230px;
+    height: 365px;
+    position: relative;
+}
+.new-menu .menu-link .beverage a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* BR MENU > 메뉴 링크 > 커피 */
+.new-menu .menu-link .coffee {
+    bottom: 780px;
+    left: 280px;
+    width: 325px;
+    height: 290px;
+    position: relative;
+}
+.new-menu .menu-link .coffee a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* BR MENU > 메뉴 링크 > 디저트 */
+.new-menu .menu-link .dessert {
+    bottom: 740px;
+    left: 280px;
+    width: 330px;
+    height: 180px;
+}
+.new-menu .menu-link .dessert a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* BR MENU > 메뉴 링크 > 기프트 */
+.new-menu .menu-link .gift {
+    bottom: 1080px;
+    left: 650px;
+    width: 270px;
+    height: 185px;
+}
+.new-menu .menu-link .gift a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* BR store & BR deliver */
+.store-deliver {
+    display: flex;
+    margin-bottom: 60px;
+}
+.store-deliver .store-deliver-logo {
+    text-align: center;
+    padding: 60px 0;
+}
+
+/* sns */
+.review {
+    margin-bottom: 30px;
+}
+/* sns > 로고 */
+.review .sns-name {
+    text-align: center;
+    padding: 30px 0;
+}
+/* sns > sns아이콘 */
+.review .sns {
+    text-align: center;
+}
+.review .sns li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+/* instagram */
+/* instagram > 상단 로고 */
+.review-insta {
+    position: relative;
+    margin-bottom: 120px;
+}
+.review-insta .pic-name {
+    text-align: center;
+    padding: 50px 0;
+}
+.review-insta .pic-name img {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* instagram > 갤러리 */
+.review-insta .review-pic {
+    width: 100%;
+}
+.review-insta .review-pic li {
+    width: 20%;
+    float: left;
+    overflow: hidden;
+    height: 230px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.review-insta .review-pic li .thumb img {
+    width: 100%;
+    height: 100%;
+}
+.review-insta .review-pic li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* 하단 */
+.foot {
+    border-top: 1px solid rgb(243, 177, 75);
+}
+/* 하단 > 첫번째 라인 */
+.foot .footlist {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 30px 0;
+}
+.foot .footlist a {
+    display: inline-block;
+    text-align: center;
+    padding: 0 20px;
+    color: rgb(117, 106, 91);
+    font-size: 14px
+}
+.foot .footlist .highlight {
+    color:rgb(238, 131, 153);
+    font-weight: 700;
+}
+
+/* 하단 > 두번째 라인 */
+.foot .footcompany {
+    background-color: rgb(249,248,247);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+/* 하단 > 두번째 라인 > 아이콘 박스 */
+.foot .footcompany .footer-list {
+    padding-right: 150px;
+}
+.foot .footcompany .footer-list li {
+    color: rgb(117, 106, 91);
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 20px;
+}
+/* 하단 > 두번째 라인 > 패밀리 사이트 */
+.foot .familysite {
+    position: absolute;
+    top: 21px;
+    right: 300px;
+    width: 150px;
+    background-color: #fff;
+    display: block;
+}
+/* 하단 > 두번째 라인 > 버튼 */
+#btnFam { /* button */
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding-left: 11px;
+    border-radius: 5px;
+    border: 1px solid #d1cecc;
+    color: #b1ab9f;
+    font-size: 11px;
+    text-align: left;
+    box-shadow: 2px 2px 2px 0px rgb(234 233 232);
+}
+
+/* 하단 > 두번째 라인 > 버튼 클릭 시 (추가) */
+.on {
+    background: transparent url(./img/family_size_on.png) no-repeat 100% 0;
+}
+.off {
+    background: transparent url(./img/family_size_off.png) no-repeat 100% 0;
+}
+
+/* 하단 > 두번째 라인 > 버튼 안에 들어갈 내용 */
+.foot .familysite ul {
+    position: absolute;
+    left: 0;
+    bottom: 28px;
+
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #d1cecc;
+    background: #fff;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+#famsite {
+    /* 보이는거 */
+    display: none;
+}
+.foot .familysite ul li a {
+    display: block;
+    height: 25px;
+    color: #726454;
+    line-height: 25px;
+}
+
+/* 인포 */
+.lastinfo {
+    text-align: center;
+    padding: 20px 0;
+}
+.lastinfo .rootericon {
+    padding: 30px 0;
+}
+/* 인포 > 텍스트 */
+.lastinfo .text-one, .lastinfo .text-two {
+    padding: 5px 0;
+    font-size: 10px;
+    letter-spacing: -1px;
+    color: rgb(107,100,97);
+}
+.lastinfo .text-one p, .lastinfo .text-two p {
+    display: inline-block;
+    padding: 0 20px;
+}
+.lastinfo .address {
+    padding: 30px 0 50px 0;
+    color: rgb(180,178,176);
+    font-size: 10px;
+}
+
+/******/
+
+/*******/
+.menulists {
+    background-color: magenta;
+    display: none;
+}
